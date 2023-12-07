@@ -1,3 +1,4 @@
+
 #trapezoidal_integral.py
 from math import sin
 import math

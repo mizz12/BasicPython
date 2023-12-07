@@ -1,3 +1,4 @@
+
 a = int(input("a の値を入力: "))
 b = int(input("b の値を入力: "))
 
