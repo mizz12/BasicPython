@@ -5,9 +5,7 @@ b = int(input("b の値を入力: "))
 # TODO
 
 if(a > b):
-    c = a
-    a = b
-    b = c
+    b,a = a,b
 def euclid(a,b):
      while b :
           c = b
