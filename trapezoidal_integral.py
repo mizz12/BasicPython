@@ -4,7 +4,7 @@ import math
 # >>> 0
 # -----------
 
-def integrate_sin(f,a = 0,b = 1,n = 100):
+def integrate_sin(f, a = 0, b = 1, n = 100):
     h = (b - a) / n
     sigma = 0
     for k in range(1,n + 1):
@@ -16,12 +16,12 @@ def integrate_sin(f,a = 0,b = 1,n = 100):
 #(1)
 def sin(x):
      return math.sin(x)
-print(integrate_sin(sin,a,math.pi / 2,50))
+print(integrate_sin(sin,0,math.pi / 2,50))
 
 #(2)
 def f(x):
      return 4 / (1 + x ** 2)
-print(integrate_sin(f,a,b,n))
+print(integrate_sin(f))
 
 #(3)
 def f(x):

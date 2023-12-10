@@ -3,7 +3,6 @@ b = float(input("bの値を入力: "))
 
 # TODO
 
-
 def prime_number(n):
     if n < 1 or n != int(n):
          print(f"error: {n}は自然数ではありません。")
