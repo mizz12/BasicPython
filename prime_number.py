@@ -1,20 +1,22 @@
-
-a = int(input("aの値を入力: "))
-b = int(input("bの値を入力: "))
+a = float(input("aの値を入力: "))
+b = float(input("bの値を入力: "))
 
 # TODO
 
-def prime_number(x):
-    j = 0
-    for i in range(2,x):
-         if x % i == 0:
-             j += 1
-    if x == 1:
-         j = 1
-    if j == 0:
-         print(f"{x}は素数です。")
+def prime_number(n):
+    if n < 1 or n != int(n):
+         print(f"error: {n}は自然数ではありません。")
     else:
-         print(f"{x}は素数ではありません。")
+         j = 0
+         for i in range(2,int(n)):
+            if n % i == 0:
+                   j += 1
+         if n == 1:
+             j = 1
+         if j == 0:
+             print(bool(1))
+         else:
+             print(bool(0))
 
 
 prime_number(a)
