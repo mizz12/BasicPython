@@ -25,17 +25,17 @@ plt.scatter(x,t) #matplotlib で可視化
 
 #問3 ndarrayの結合
 
-X = (np.array([
-    [np.where(x > 0, 1, 1)], #x0: 長さが x と同じで要素が全て1のndarray
-    [x],                     #x1: 観測値 x の各要素を1乗したndarray
-    [x ** 2]])).T            #x2: 観測値 x の各要素を2乗したndarray
-X
+x0 = np.ones_like(x) #x0: 長さが x と同じで要素が全て1のndarray
+x1 = x               #x1: 観測値 x の各要素を1乗したndarray
+x2 = x ** 2          #x2: 観測値 x の各要素を2乗したndarray
+
+X = (np.vstack((x0,x1,x2))).T #垂直方向に結合した2次元配列を転置した行列 X
 
 
 
 #問4  線形代数
 
-w0, w1, w2 = (np.linalg.det(np.dot(X.T, X))) * (X.T) * t #パラメータのベクトル 
+w0, w1, w2 = (np.linalg.inv((X.T @ X))) @ (X.T) @ t #パラメータのベクトル 
 pred_y = w0 + w1 * x + w2 * x ** 2 #観測値 x, t をもとに真の関数 y を2次関数で回帰
 
 plt.scatter(x, t) #先ほどのグラフに真の関数(緑)と回帰曲線(赤)を重ねる
