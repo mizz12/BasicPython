@@ -1,7 +1,7 @@
 #問１ ndarrayの生成
 
 import matplotlib.pyplot as plt
-import numpy as np
+import BasicPython.numpy課題 as np
 
 np.random.seed(0)
 
